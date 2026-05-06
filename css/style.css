@@ -1,0 +1,164 @@
+/* GC Club - Custom Styles */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* GC Logo Badge */
+.gc-logo-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #DAA520, #B8860B);
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(218, 165, 32, 0.3);
+}
+
+.gc-logo-hero {
+  width: 80px;
+  height: 80px;
+  font-size: 28px;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(218, 165, 32, 0.4);
+}
+
+/* Hero Section */
+.hero-bg {
+  min-height: 380px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2318 40%, #3d2e1a 60%, #1a1a1a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(218, 165, 32, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 30%, rgba(218, 165, 32, 0.05) 0%, transparent 50%);
+}
+
+.hero-bg > div {
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .hero-bg {
+    min-height: 480px;
+  }
+}
+
+/* Section Title */
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #DAA520;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Board Banner */
+.board-banner {
+  background: linear-gradient(135deg, #B8860B, #DAA520, #B8860B);
+}
+
+/* Program Cards */
+.program-card {
+  border-left: 4px solid #DAA520;
+  padding-left: 1.5rem;
+}
+
+.program-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #DAA520;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .program-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Partner Logo Placeholders */
+.partner-logo {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #666;
+  line-height: 1.2;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+@media (min-width: 768px) {
+  .partner-logo {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+.partner-logo:hover {
+  border-color: #DAA520;
+  box-shadow: 0 2px 12px rgba(218, 165, 32, 0.15);
+}
+
+/* Header scroll effect */
+#header {
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#header.scrolled {
+  background-color: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Mobile menu animation */
+#mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, border-color 0.3s ease;
+  border-color: transparent;
+}
+
+#mobile-menu.open {
+  max-height: 300px;
+  border-color: rgb(55, 65, 81);
+}
+
+/* Search input focus */
+input:focus {
+  border-color: #DAA520 !important;
+  box-shadow: 0 0 0 3px rgba(218, 165, 32, 0.1);
+}

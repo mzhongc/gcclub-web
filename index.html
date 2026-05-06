@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GC Canada GlowUp Club</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: '#DAA520',
+            'gold-dark': '#B8860B',
+            'gold-light': '#F0D060',
+            dark: '#1a1a1a',
+          },
+          fontFamily: {
+            sans: ['"PingFang SC"', '"Microsoft YaHei"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-dark shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2">
+        <div class="gc-logo-badge">GC</div>
+        <span class="text-white text-sm sm:text-lg font-bold tracking-wide whitespace-nowrap">Canada GlowUp Club</span>
+      </a>
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="#about" class="text-gray-300 hover:text-gold transition">关于我们</a>
+        <a href="#programs" class="text-gray-300 hover:text-gold transition">核心部门</a>
+        <a href="#partners" class="text-gray-300 hover:text-gold transition">合作伙伴</a>
+        <a href="#contact" class="text-gray-300 hover:text-gold transition">联系我们</a>
+        <button id="lang-toggle" class="flex items-center gap-1 text-sm text-gray-300 hover:text-gold transition border border-gray-600 rounded px-2 py-1">
+          🇨🇦 EN
+        </button>
+      </nav>
+      <!-- Mobile Menu Button -->
+      <div class="flex items-center gap-3 md:hidden">
+        <button id="lang-toggle-mobile" class="text-sm text-gray-300 border border-gray-600 rounded px-2 py-1">
+          🇨🇦 EN
+        </button>
+        <button id="menu-toggle" class="text-white" aria-label="菜单">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="md:hidden bg-dark border-t border-gray-700">
+      <a href="#about" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition">关于我们</a>
+      <a href="#programs" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition">核心部门</a>
+      <a href="#partners" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition">合作伙伴</a>
+      <a href="#contact" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition">联系我们</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-section pt-16">
+    <div class="hero-bg flex items-center justify-center text-center px-4">
+      <div>
+        <div class="gc-logo-badge gc-logo-hero mx-auto mb-4">GC</div>
+        <h1 class="text-white text-3xl md:text-5xl font-bold mb-2">Canada GlowUp Club</h1>
+        <p class="text-gold text-lg md:text-xl">让更多年轻人、家庭和新移民找到参与公共生活的路径</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / 协会简介 -->
+  <section id="about" class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="section-title">协会简介</h2>
+      <div class="w-16 h-1 bg-gold mb-8"></div>
+
+      <h3 class="text-xl font-bold mb-4">GC（Canada GlowUp Club）</h3>
+      <p class="mb-4 leading-relaxed">
+        是一个致力于推动不列颠哥伦比亚省（BC）社区活力、青年发展与多元文化交流的非营利性组织。
+      </p>
+      <p class="mb-8 leading-relaxed">
+        我们通过一系列公共文化项目、青年领导力计划和创作者平台，连接家庭、青年、女性创业者与本地社区，促进公民参与、文化表达与社区凝聚力。
+      </p>
+
+      <h3 class="text-xl font-bold mb-3">GC 的使命：</h3>
+      <p class="mb-4 leading-relaxed">
+        让更多年轻人、家庭和新移民，在 BC 找到参与公共生活、表达自我和贡献社会的路径。
+      </p>
+    </div>
+  </section>
+
+  <!-- Board Banner -->
+  <section class="board-banner py-10 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-white text-xl md:text-2xl font-bold tracking-wider">BOARD</h2>
+      <p class="text-white text-sm md:text-base mt-2 tracking-wide">MAKE THE COMMUNITY OF BC MORE WARM, CREATIVE AND VIBRANT</p>
+    </div>
+  </section>
+
+  <!-- Why We Exist / 我们为什么存在 -->
+  <section class="py-16 px-4 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="section-title">我们为什么存在</h2>
+      <div class="w-16 h-1 bg-gold mb-8"></div>
+
+      <p class="mb-4 leading-relaxed">BC 是一个高度多元、充满创造力的省份，但同时也面临着几个现实挑战：</p>
+
+      <ul class="space-y-3 mb-6">
+        <li class="flex items-start gap-2">
+          <span class="text-gold mt-1">●</span>
+          <span>青年缺乏参与公共事务与领导力发展的机会</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-gold mt-1">●</span>
+          <span>新移民与本地社区之间的连接不足</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-gold mt-1">●</span>
+          <span>女性创业者和小企业主缺乏可持续的资源与曝光渠道</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-gold mt-1">●</span>
+          <span>本地文化与旅游内容在数字平台上的传播不足</span>
+        </li>
+      </ul>
+
+      <p class="leading-relaxed">
+        GC 的存在，就是为了把这些分散的力量连接起来，通过文化、青年与内容创作，为 BC 注入新的社会活力。
+      </p>
+    </div>
+  </section>
+
+  <!-- Core Programs / 三大核心部门 -->
+  <section id="programs" class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="section-title">我们的三大核心部门</h2>
+      <div class="w-16 h-1 bg-gold mb-8"></div>
+      <p class="mb-12 leading-relaxed">
+        GC 通过三个互相协同的部门开展工作，形成一个完整的社区支持生态系统。
+      </p>
+
+      <!-- GC Women in Business -->
+      <div class="program-card mb-12">
+        <h3 class="program-title">GC 女性创业（GC Women in Business）</h3>
+        <p class="mb-4 leading-relaxed">
+          GC 女性创业部门致力于支持 BC 省的女性创业者与中小企业主，帮助她们建立可持续的品牌与市场影响力。
+        </p>
+        <p class="mb-3 font-medium">我们为女性创业者提供：</p>
+        <ul class="space-y-2 mb-4">
+          <li class="flex items-start gap-2">
+            <span class="text-gold mt-1">●</span>
+            <span>创业资源与社群支持</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gold mt-1">●</span>
+            <span>自媒体与内容营销培训</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gold mt-1">●</span>
+            <span>品牌表达与线上推广渠道</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gold mt-1">●</span>
+            <span>与创作者与社区的连接机会</span>
+          </li>
+        </ul>
+        <p class="leading-relaxed text-gray-600">
+          我们的目标是让更多女性企业主被看见、被听见，并被市场认可。
+        </p>
+      </div>
+
+      <!-- GC Youth -->
+      <div class="program-card mb-12">
+        <h3 class="program-title">GC Youth｜青年与公民参与计划</h3>
+        <p class="mb-4 leading-relaxed">
+          GC Youth 是 GC 的青年发展与公民教育平台，服务对象为青少年与年轻家庭。
+        </p>
+        <p class="mb-3 font-medium">我们通过实践型项目培养青少年的：</p>
+        <ul class="space-y-2 mb-4">
+          <li class="flex items-start gap-2">
+            <span class="text-gold mt-1">●</span>
+            <span>社会责任感</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gold mt-1">●</span>
+            <span>领导力</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gold mt-1">●</span>
+            <span>社区意识</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gold mt-1">●</span>
+            <span>公民参与能力</span>
+          </li>
+        </ul>
+        <p class="mb-3 font-medium">GC Youth 的项目包括：</p>
+        <ul class="space-y-2 mb-4">
+          <li class="flex items-start gap-2">
+            <span class="text-gold mt-1">●</span>
+            <span>青少年圆桌会议（City Hall 公民参与）</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gold mt-1">●</span>
+            <span>青年主导的公益行动（如食品浪费减少与社区分享项目）</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gold mt-1">●</span>
+            <span>慈善音乐会与家庭公益活动</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gold mt-1">●</span>
+            <span>青少年领袖培养与评选</span>
+          </li>
+        </ul>
+        <p class="leading-relaxed text-gray-600">
+          例如，我们组织青年与本地农场合作，将原本会被丢弃的蔬果分发给社区家庭，用行动建立人与人之间的连接。
+        </p>
+      </div>
+
+      <!-- GC Creators -->
+      <div class="program-card mb-12">
+        <h3 class="program-title">GC 创作者与博主平台（GC Creators）</h3>
+        <p class="mb-4 leading-relaxed">
+          GC 拥有一个由大量本地内容创作者与博主组成的网络，覆盖：
+        </p>
+        <ul class="space-y-2 mb-4">
+          <li class="flex items-start gap-2">
+            <span class="text-gold mt-1">●</span>
+            <span>生活方式</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gold mt-1">●</span>
+            <span>美食</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gold mt-1">●</span>
+            <span>旅游</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gold mt-1">●</span>
+            <span>文化</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gold mt-1">●</span>
+            <span>社区</span>
+          </li>
+        </ul>
+        <p class="mb-3 font-medium">我们通过这一平台：</p>
+        <ul class="space-y-2 mb-4">
+          <li class="flex items-start gap-2">
+            <span class="text-gold mt-1">●</span>
+            <span>帮助 BC 本地企业与旅游业对接数字传播</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gold mt-1">●</span>
+            <span>为创作者提供有价值、有社会意义的内容方向</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gold mt-1">●</span>
+            <span>推动 BC 本地文化与城市形象的传播</span>
+          </li>
+        </ul>
+        <p class="leading-relaxed text-gray-600">
+          我们的年度重点项目——GC 博主大会（GC Creators Summit），以"唤醒 BC 新活力（Inspiring BC）"为主题，鼓励创作者用真实、生动的内容呈现 BC 的生活方式、旅游资源与社区文化，让更多人认识并来到 BC。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners / 合作伙伴 -->
+  <section id="partners" class="py-16 px-4 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="section-title">合作伙伴</h2>
+      <div class="w-16 h-1 bg-gold mb-8"></div>
+
+      <div class="grid grid-cols-4 md:grid-cols-6 gap-3 md:gap-4">
+        <div class="partner-logo">LOUISAN<br><span class="text-xs text-gray-400">良加建设</span></div>
+        <div class="partner-logo">AUTO WEST<br><span class="text-xs text-gray-400">BMW</span></div>
+        <div class="partner-logo"><span class="font-bold text-red-600">CIBC</span></div>
+        <div class="partner-logo">RiverRock<br><span class="text-xs text-gray-400">Casino Resort</span></div>
+        <div class="partner-logo">中国电信<br><span class="text-xs text-gray-400">CTExCl</span></div>
+        <div class="partner-logo">FROBISHER<br><span class="text-xs text-gray-400">富源国际</span></div>
+        <div class="partner-logo">恒昇财富<br><span class="text-xs text-gray-400">Heng Wealth</span></div>
+        <div class="partner-logo"><span class="font-bold">3Fish</span></div>
+        <div class="partner-logo">OMNI<br><span class="text-xs text-gray-400">Television</span></div>
+        <div class="partner-logo">FITNESS<br><span class="text-xs text-gray-400">WORLD</span></div>
+        <div class="partner-logo">瑞豐集團</div>
+        <div class="partner-logo"><span class="font-bold">HYPEROO</span></div>
+        <div class="partner-logo">柏翠纳</div>
+        <div class="partner-logo">HOME<br><span class="text-xs text-gray-400">QUARTERS</span></div>
+        <div class="partner-logo">刘一手<br><span class="text-xs text-gray-400">火锅</span></div>
+        <div class="partner-logo">IMPERIAL<br><span class="text-xs text-gray-400">御尚</span></div>
+        <div class="partner-logo"><span class="font-bold italic">bravo</span></div>
+        <div class="partner-logo">华中文<br><span class="text-xs text-gray-400">Ling-Jia</span></div>
+        <div class="partner-logo">uaKong</div>
+        <div class="partner-logo">大班冰皮</div>
+        <div class="partner-logo"><span class="font-bold">TELUS</span></div>
+        <div class="partner-logo">瑞豐餐飲</div>
+        <div class="partner-logo">美食</div>
+        <div class="partner-logo"><span class="font-bold">LUNA</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search -->
+  <section class="py-10 px-4">
+    <div class="max-w-xl mx-auto flex gap-2">
+      <input type="text" placeholder="输入关键字" class="flex-1 border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-gold">
+      <button class="bg-gold hover:bg-gold-dark text-white px-6 py-3 rounded-md transition font-bold">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-dark text-gray-400 py-12 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h3 class="text-gold text-lg font-bold mb-4">协会简介</h3>
+      <p class="text-sm leading-relaxed mb-6">
+        GC（Canada GlowUp Club）是一个致力于推动不列颠哥伦比亚省（BC）社区活力、青年发展与多元文化交流的非营利性组织。我们通过一系列公共文化项目、青年领导力计划和创作者平台，连接家庭、青年、女性创业者与本地社区，促进公民参与、文化表达与社区凝聚力。GC 的使命是：让更多年轻人、家庭和新移民……
+      </p>
+      <div class="border-t border-gray-700 pt-6 text-center">
+        <p class="text-gold text-sm">Copyright &copy; 2026 Canada GlowUp Club</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Language Modal -->
+  <div id="lang-modal" class="hidden fixed inset-0 z-[60] bg-black/50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl p-6 max-w-sm w-full text-center">
+      <p class="text-lg font-bold mb-2">English Version</p>
+      <p class="text-gray-500 mb-4">English version is coming soon.<br>英文版即将上线，敬请期待。</p>
+      <button onclick="document.getElementById('lang-modal').classList.add('hidden')" class="bg-gold text-white px-6 py-2 rounded-lg font-bold hover:bg-gold-dark transition">OK</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
