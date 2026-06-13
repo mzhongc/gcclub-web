@@ -19,14 +19,15 @@ mobileMenu.querySelectorAll('a').forEach(link => {
   });
 });
 
-// Language toggle (placeholder)
-const langModal = document.getElementById('lang-modal');
-document.getElementById('lang-toggle')?.addEventListener('click', () => {
-  langModal.classList.remove('hidden');
-});
-document.getElementById('lang-toggle-mobile')?.addEventListener('click', () => {
-  langModal.classList.remove('hidden');
-});
+// Language toggle (中文 <-> English)
+function toggleLanguage() {
+  const isZh = document.body.classList.contains('lang-zh');
+  document.body.classList.toggle('lang-zh', !isZh);
+  document.body.classList.toggle('lang-en', isZh);
+  document.documentElement.lang = isZh ? 'en' : 'zh-CN';
+}
+document.getElementById('lang-toggle')?.addEventListener('click', toggleLanguage);
+document.getElementById('lang-toggle-mobile')?.addEventListener('click', toggleLanguage);
 
 // Header scroll effect
 const header = document.getElementById('header');

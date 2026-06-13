@@ -10,34 +10,28 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* GC Logo Badge */
-.gc-logo-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  background: linear-gradient(135deg, #DAA520, #B8860B);
-  border-radius: 6px;
-  color: #fff;
-  font-weight: 800;
-  font-size: 14px;
-  letter-spacing: 1px;
-  flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(218, 165, 32, 0.3);
+/* Language toggle: show only the active language */
+[data-lang] { display: none; }
+body.lang-zh [data-lang="zh"] { display: revert; }
+body.lang-en [data-lang="en"] { display: revert; }
+
+/* Hero logo */
+.gc-logo-hero {
+  width: 96px;
+  height: auto;
+  filter: drop-shadow(0 4px 20px rgba(218, 165, 32, 0.4));
 }
 
-.gc-logo-hero {
-  width: 80px;
-  height: 80px;
-  font-size: 28px;
-  border-radius: 14px;
-  box-shadow: 0 4px 20px rgba(218, 165, 32, 0.4);
+@media (min-width: 768px) {
+  .gc-logo-hero {
+    width: 120px;
+  }
 }
 
 /* Hero Section */
 .hero-bg {
-  min-height: 380px;
+  min-height: 300px;
+  padding: 2.5rem 0;
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2318 40%, #3d2e1a 60%, #1a1a1a 100%);
   position: relative;
   overflow: hidden;
@@ -59,7 +53,7 @@ body {
 
 @media (min-width: 768px) {
   .hero-bg {
-    min-height: 480px;
+    min-height: 360px;
   }
 }
 
@@ -77,9 +71,69 @@ body {
   }
 }
 
-/* Board Banner */
-.board-banner {
-  background: linear-gradient(135deg, #B8860B, #DAA520, #B8860B);
+/* Section eyebrow (small label above title) */
+.section-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #B8860B;
+  margin-bottom: 0.25rem;
+}
+
+/* Mission / Vision cards */
+.mv-card {
+  background: #fff;
+  border-top: 4px solid #DAA520;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.mv-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #DAA520;
+  margin-bottom: 1rem;
+}
+
+/* Core Value cards */
+.value-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-left: 4px solid #DAA520;
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.value-card:hover {
+  box-shadow: 0 6px 20px rgba(218, 165, 32, 0.12);
+  transform: translateY(-2px);
+}
+
+.value-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #DAA520;
+  margin-bottom: 0.6rem;
+}
+
+.value-title-zh {
+  color: #666;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Focus area items */
+.focus-item {
+  display: flex;
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  line-height: 1.5;
 }
 
 /* Program Cards */
