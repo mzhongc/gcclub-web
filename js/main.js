@@ -19,12 +19,13 @@ mobileMenu.querySelectorAll('a').forEach(link => {
   });
 });
 
-// Language toggle (中文 <-> English)
+// Language toggle (中文 <-> English) — remembered across pages
 function toggleLanguage() {
   const isZh = document.body.classList.contains('lang-zh');
   document.body.classList.toggle('lang-zh', !isZh);
   document.body.classList.toggle('lang-en', isZh);
   document.documentElement.lang = isZh ? 'en' : 'zh-CN';
+  try { localStorage.setItem('gc-lang', isZh ? 'en' : 'zh'); } catch (e) {}
 }
 document.getElementById('lang-toggle')?.addEventListener('click', toggleLanguage);
 document.getElementById('lang-toggle-mobile')?.addEventListener('click', toggleLanguage);
@@ -49,6 +50,13 @@ if (lightbox) {
     if (e.key === 'Escape') closeLightbox();
   });
 }
+
+// Year groups expand / collapse (Events page)
+document.querySelectorAll('.year-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.year-group').classList.toggle('open');
+  });
+});
 
 // Header scroll effect
 const header = document.getElementById('header');

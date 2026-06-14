@@ -27,6 +27,8 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-white text-gray-800 font-sans lang-zh">
+  <!-- 记住上次选择的语言（在各页面之间保持一致），尽早执行避免闪烁 -->
+  <script>try{if(localStorage.getItem('gc-lang')==='en'){document.body.classList.remove('lang-zh');document.body.classList.add('lang-en');document.documentElement.lang='en';}}catch(e){}</script>
 
   <!-- Header -->
   <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-dark shadow-lg">
@@ -41,7 +43,7 @@
         <a href="#about" class="nav-link text-gray-300 hover:text-gold transition"><span data-lang="zh">关于我们</span><span data-lang="en">About</span></a>
         <a href="#values" class="nav-link text-gray-300 hover:text-gold transition"><span data-lang="zh">核心价值</span><span data-lang="en">Values</span></a>
         <a href="#whatwedo" class="nav-link text-gray-300 hover:text-gold transition"><span data-lang="zh">我们在做什么</span><span data-lang="en">What We Do</span></a>
-        <a href="#events" class="nav-link text-gray-300 hover:text-gold transition"><span data-lang="zh">活动回顾</span><span data-lang="en">Events</span></a>
+        <a href="events.html" class="nav-link text-gray-300 hover:text-gold transition"><span data-lang="zh">活动回顾</span><span data-lang="en">Events</span></a>
         <a href="#contact" class="nav-link text-gray-300 hover:text-gold transition"><span data-lang="zh">联系我们</span><span data-lang="en">Contact</span></a>
         <button id="lang-toggle" class="flex items-center gap-1 text-sm text-gray-300 hover:text-gold transition border border-gray-600 rounded px-2 py-1">
           <span data-lang="zh">🇨🇦 EN</span><span data-lang="en">🇨🇳 中文</span>
@@ -64,7 +66,7 @@
       <a href="#about" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition"><span data-lang="zh">关于我们</span><span data-lang="en">About</span></a>
       <a href="#values" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition"><span data-lang="zh">核心价值</span><span data-lang="en">Values</span></a>
       <a href="#whatwedo" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition"><span data-lang="zh">我们在做什么</span><span data-lang="en">What We Do</span></a>
-      <a href="#events" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition"><span data-lang="zh">活动回顾</span><span data-lang="en">Events</span></a>
+      <a href="events.html" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition"><span data-lang="zh">活动回顾</span><span data-lang="en">Events</span></a>
       <a href="#contact" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition"><span data-lang="zh">联系我们</span><span data-lang="en">Contact</span></a>
     </nav>
   </header>
@@ -244,57 +246,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ============================================================= -->
-  <!-- Events / 活动回顾                                              -->
-  <!-- 如何新增一场活动：复制下面整块 <article class="event-item">    -->
-  <!-- ...</article>，改标题/日期/视频ID/照片即可。最新的活动放最上面。 -->
-  <!-- ============================================================= -->
-  <section id="events" class="py-16 px-4">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="section-title"><span data-lang="zh">活动回顾</span><span data-lang="en">Events</span></h2>
-      <div class="w-16 h-1 bg-gold mb-10"></div>
-
-      <!-- ===== 一场活动 开始 ===== -->
-      <article class="event-item">
-        <!-- 标题 + 日期 -->
-        <div class="event-head">
-          <h3 class="event-title"><span data-lang="zh">夏日社区聚会</span><span data-lang="en">Summer Community Gathering</span></h3>
-          <span class="event-date">2026.06</span>
-        </div>
-        <p class="event-desc">
-          <span data-lang="zh">一段活动简介文字，介绍这场活动的主题、亮点和参与情况。</span>
-          <span data-lang="en">A short description of this event — its theme, highlights, and who took part.</span>
-        </p>
-
-        <!-- 视频（可选）：把 YOUTUBE_VIDEO_ID 换成你 YouTube 视频的 ID 即可。
-             例如视频链接是 https://www.youtube.com/watch?v=abc123XYZ ，ID 就是 abc123XYZ。
-             这场活动没有视频，就把整段 <div class="video-embed"> ... </div> 删掉。 -->
-        <div class="video-embed">
-          <iframe src="https://www.youtube-nocookie.com/embed/YOUTUBE_VIDEO_ID" title="活动视频" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-
-        <!-- 照片相册：每张照片一个 <a>。把 src 换成你放在
-             assets/events/ 里的图片路径即可（href 和 src 填同一个）。 -->
-        <div class="gallery">
-          <a href="assets/events/placeholder.svg" class="gallery-item"><img src="assets/events/placeholder.svg" alt="活动照片" loading="lazy"></a>
-          <a href="assets/events/placeholder.svg" class="gallery-item"><img src="assets/events/placeholder.svg" alt="活动照片" loading="lazy"></a>
-          <a href="assets/events/placeholder.svg" class="gallery-item"><img src="assets/events/placeholder.svg" alt="活动照片" loading="lazy"></a>
-          <a href="assets/events/placeholder.svg" class="gallery-item"><img src="assets/events/placeholder.svg" alt="活动照片" loading="lazy"></a>
-          <a href="assets/events/placeholder.svg" class="gallery-item"><img src="assets/events/placeholder.svg" alt="活动照片" loading="lazy"></a>
-          <a href="assets/events/placeholder.svg" class="gallery-item"><img src="assets/events/placeholder.svg" alt="活动照片" loading="lazy"></a>
-        </div>
-      </article>
-      <!-- ===== 一场活动 结束 ===== -->
-
-    </div>
-  </section>
-
-  <!-- Lightbox (点击照片放大) -->
-  <div id="lightbox" class="lightbox">
-    <span class="lightbox-close" aria-label="close">&times;</span>
-    <img id="lightbox-img" src="" alt="">
-  </div>
 
   <!-- Contact -->
   <section id="contact" class="py-16 px-4 bg-gray-50">

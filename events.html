@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>活动回顾 | GC GlowUp Club</title>
+  <link rel="icon" type="image/png" href="assets/gc-logo.png">
+  <link rel="apple-touch-icon" href="assets/gc-logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: '#DAA520',
+            'gold-dark': '#B8860B',
+            'gold-light': '#F0D060',
+            dark: '#1a1a1a',
+          },
+          fontFamily: {
+            sans: ['"PingFang SC"', '"Microsoft YaHei"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white text-gray-800 font-sans lang-zh">
+  <!-- 记住上次选择的语言（在各页面之间保持一致），尽早执行避免闪烁 -->
+  <script>try{if(localStorage.getItem('gc-lang')==='en'){document.body.classList.remove('lang-zh');document.body.classList.add('lang-en');document.documentElement.lang='en';}}catch(e){}</script>
+
+  <!-- Header -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-dark shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="assets/gc-logo.png" alt="GC GlowUp Club" class="h-10 w-auto">
+        <span class="text-white text-sm sm:text-lg font-bold tracking-wide whitespace-nowrap">GC GlowUp Club</span>
+      </a>
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-6">
+        <a href="index.html#about" class="text-gray-300 hover:text-gold transition"><span data-lang="zh">关于我们</span><span data-lang="en">About</span></a>
+        <a href="index.html#values" class="text-gray-300 hover:text-gold transition"><span data-lang="zh">核心价值</span><span data-lang="en">Values</span></a>
+        <a href="index.html#whatwedo" class="text-gray-300 hover:text-gold transition"><span data-lang="zh">我们在做什么</span><span data-lang="en">What We Do</span></a>
+        <a href="events.html" class="text-gold font-semibold transition"><span data-lang="zh">活动回顾</span><span data-lang="en">Events</span></a>
+        <a href="index.html#contact" class="text-gray-300 hover:text-gold transition"><span data-lang="zh">联系我们</span><span data-lang="en">Contact</span></a>
+        <button id="lang-toggle" class="flex items-center gap-1 text-sm text-gray-300 hover:text-gold transition border border-gray-600 rounded px-2 py-1">
+          <span data-lang="zh">🇨🇦 EN</span><span data-lang="en">🇨🇳 中文</span>
+        </button>
+      </nav>
+      <!-- Mobile Menu Button -->
+      <div class="flex items-center gap-3 lg:hidden">
+        <button id="lang-toggle-mobile" class="text-sm text-gray-300 border border-gray-600 rounded px-2 py-1">
+          <span data-lang="zh">🇨🇦 EN</span><span data-lang="en">🇨🇳 中文</span>
+        </button>
+        <button id="menu-toggle" class="text-white" aria-label="menu">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="lg:hidden bg-dark border-t border-gray-700">
+      <a href="index.html#about" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition"><span data-lang="zh">关于我们</span><span data-lang="en">About</span></a>
+      <a href="index.html#values" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition"><span data-lang="zh">核心价值</span><span data-lang="en">Values</span></a>
+      <a href="index.html#whatwedo" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition"><span data-lang="zh">我们在做什么</span><span data-lang="en">What We Do</span></a>
+      <a href="events.html" class="block px-6 py-3 text-gold font-semibold hover:bg-gray-800 transition"><span data-lang="zh">活动回顾</span><span data-lang="en">Events</span></a>
+      <a href="index.html#contact" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition"><span data-lang="zh">联系我们</span><span data-lang="en">Contact</span></a>
+    </nav>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <h1><span data-lang="zh">活动回顾</span><span data-lang="en">Events</span></h1>
+    <p>
+      <span data-lang="zh">记录 GC 每一次社区活动的精彩瞬间</span>
+      <span data-lang="en">Highlights from every GC community gathering</span>
+    </p>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- 如何维护：                                                     -->
+  <!--  • 每一年是一个 <div class="year-group ...">。最新年份放最上面，  -->
+  <!--    并加上 open 类（默认展开）；旧年份不加 open（默认收起）。      -->
+  <!--  • 每场活动是一个 <article class="event-item">，最新的放在该年最上面。-->
+  <!--  • 新增活动：复制一整块 <article>...</article>，改 标题/日期/简介/ -->
+  <!--    视频ID/照片 即可。照片放在 assets/events/ 文件夹里。            -->
+  <!-- ============================================================= -->
+  <main class="max-w-4xl mx-auto px-4 py-10">
+
+    <!-- ===== 年份 2026（默认展开） ===== -->
+    <div class="year-group open">
+      <button class="year-toggle" type="button">
+        2026
+        <span class="year-count"><span data-lang="zh">2 场活动</span><span data-lang="en">2 events</span></span>
+        <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="year-content">
+        <div class="timeline">
+
+          <!-- ===== 一场活动 开始（含视频 + 照片） ===== -->
+          <article class="event-item">
+            <div class="event-head">
+              <h3 class="event-title"><span data-lang="zh">夏日社区聚会</span><span data-lang="en">Summer Community Gathering</span></h3>
+              <span class="event-date">2026.06</span>
+            </div>
+            <p class="event-desc">
+              <span data-lang="zh">一段活动简介文字，介绍这场活动的主题、亮点和参与情况。</span>
+              <span data-lang="en">A short description of this event — its theme, highlights, and who took part.</span>
+            </p>
+
+            <!-- 视频（可选）：把 YOUTUBE_VIDEO_ID 换成你 YouTube 视频的 ID 即可。
+                 例如链接 https://www.youtube.com/watch?v=abc123XYZ ，ID 就是 abc123XYZ。
+                 没有视频就删掉整段 <div class="video-embed"> ... </div>。 -->
+            <div class="video-embed">
+              <iframe src="https://www.youtube-nocookie.com/embed/YOUTUBE_VIDEO_ID" title="活动视频" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <!-- 照片相册：每张照片一个 <a>，href 和 src 填同一个图片路径。 -->
+            <div class="gallery">
+              <a href="assets/events/placeholder.svg" class="gallery-item"><img src="assets/events/placeholder.svg" alt="活动照片" loading="lazy"></a>
+              <a href="assets/events/placeholder.svg" class="gallery-item"><img src="assets/events/placeholder.svg" alt="活动照片" loading="lazy"></a>
+              <a href="assets/events/placeholder.svg" class="gallery-item"><img src="assets/events/placeholder.svg" alt="活动照片" loading="lazy"></a>
+              <a href="assets/events/placeholder.svg" class="gallery-item"><img src="assets/events/placeholder.svg" alt="活动照片" loading="lazy"></a>
+            </div>
+          </article>
+          <!-- ===== 一场活动 结束 ===== -->
+
+          <!-- ===== 一场活动 开始（仅照片，无视频） ===== -->
+          <article class="event-item">
+            <div class="event-head">
+              <h3 class="event-title"><span data-lang="zh">新春茶话会</span><span data-lang="en">Lunar New Year Tea Party</span></h3>
+              <span class="event-date">2026.02</span>
+            </div>
+            <p class="event-desc">
+              <span data-lang="zh">这是一场没有视频、只有照片的活动示例。</span>
+              <span data-lang="en">An example event with photos only (no video).</span>
+            </p>
+            <div class="gallery">
+              <a href="assets/events/placeholder.svg" class="gallery-item"><img src="assets/events/placeholder.svg" alt="活动照片" loading="lazy"></a>
+              <a href="assets/events/placeholder.svg" class="gallery-item"><img src="assets/events/placeholder.svg" alt="活动照片" loading="lazy"></a>
+              <a href="assets/events/placeholder.svg" class="gallery-item"><img src="assets/events/placeholder.svg" alt="活动照片" loading="lazy"></a>
+            </div>
+          </article>
+          <!-- ===== 一场活动 结束 ===== -->
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 年份 2025（默认收起） ===== -->
+    <div class="year-group">
+      <button class="year-toggle" type="button">
+        2025
+        <span class="year-count"><span data-lang="zh">1 场活动</span><span data-lang="en">1 event</span></span>
+        <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="year-content">
+        <div class="timeline">
+          <article class="event-item">
+            <div class="event-head">
+              <h3 class="event-title"><span data-lang="zh">秋季慈善义卖</span><span data-lang="en">Autumn Charity Bazaar</span></h3>
+              <span class="event-date">2025.10</span>
+            </div>
+            <p class="event-desc">
+              <span data-lang="zh">往年活动示例，点击上方年份可以展开或收起。</span>
+              <span data-lang="en">A past-year example — click the year above to expand or collapse.</span>
+            </p>
+            <div class="gallery">
+              <a href="assets/events/placeholder.svg" class="gallery-item"><img src="assets/events/placeholder.svg" alt="活动照片" loading="lazy"></a>
+              <a href="assets/events/placeholder.svg" class="gallery-item"><img src="assets/events/placeholder.svg" alt="活动照片" loading="lazy"></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Lightbox (点击照片放大) -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close" aria-label="close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-gray-400 py-12 px-4 mt-10">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-center gap-2 mb-4">
+        <img src="assets/gc-logo.png" alt="GC GlowUp Club" class="h-9 w-auto">
+        <span class="text-gold text-lg font-bold">GC GlowUp Club</span>
+      </div>
+      <p class="text-sm leading-relaxed mb-6 max-w-2xl">
+        <span data-lang="zh">GC 是一个立足温哥华的女性社区平台，致力于连接品牌、创作者与本地社区资源，为女性创造真实、有价值、有影响力的发展机会。</span>
+        <span data-lang="en">GC is a Vancouver-based women's community platform connecting creators, brands, and local resources to create meaningful opportunities for women to connect, grow, and thrive.</span>
+      </p>
+      <div class="border-t border-gray-700 pt-6 text-center">
+        <p class="text-gold text-sm">Copyright &copy; 2026 GC GlowUp Club</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
