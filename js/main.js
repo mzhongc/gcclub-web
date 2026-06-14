@@ -29,6 +29,27 @@ function toggleLanguage() {
 document.getElementById('lang-toggle')?.addEventListener('click', toggleLanguage);
 document.getElementById('lang-toggle-mobile')?.addEventListener('click', toggleLanguage);
 
+// Lightbox for event photos (click to enlarge)
+const lightbox = document.getElementById('lightbox');
+if (lightbox) {
+  const lightboxImg = document.getElementById('lightbox-img');
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      lightboxImg.src = item.getAttribute('href');
+      lightbox.classList.add('open');
+    });
+  });
+  const closeLightbox = () => {
+    lightbox.classList.remove('open');
+    lightboxImg.src = '';
+  };
+  lightbox.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+}
+
 // Header scroll effect
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {

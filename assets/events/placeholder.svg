@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Event photo placeholder">
+  <rect width="600" height="600" fill="#f3f4f6"/>
+  <rect x="6" y="6" width="588" height="588" fill="none" stroke="#DAA520" stroke-width="3" rx="14"/>
+  <g fill="none" stroke="#c9a227" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="200" y="245" width="200" height="135" rx="16"/>
+    <path d="M255 245 l18 -28 h54 l18 28"/>
+  </g>
+  <circle cx="300" cy="312" r="40" fill="none" stroke="#c9a227" stroke-width="10"/>
+  <text x="300" y="455" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" fill="#9ca3af">活动照片 / Event Photo</text>
+</svg>
