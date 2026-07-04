@@ -6,19 +6,24 @@
   <title>GC GlowUp Club</title>
   <link rel="icon" type="image/png" href="assets/gc-logo.png">
   <link rel="apple-touch-icon" href="assets/gc-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Noto+Serif+SC:wght@600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            gold: '#DAA520',
-            'gold-dark': '#B8860B',
-            'gold-light': '#F0D060',
-            dark: '#1a1a1a',
+            gold: '#C9A227',
+            'gold-dark': '#A8862B',
+            'gold-light': '#D4B45A',
+            dark: '#141210',
+            ivory: '#FAF8F3',
           },
           fontFamily: {
-            sans: ['"PingFang SC"', '"Microsoft YaHei"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+            sans: ['Inter', '"Noto Sans SC"', '"PingFang SC"', '"Microsoft YaHei"', 'sans-serif'],
+            display: ['"Playfair Display"', '"Noto Serif SC"', '"Songti SC"', 'serif'],
           }
         }
       }
@@ -31,21 +36,22 @@
   <script>try{if(localStorage.getItem('gc-lang')==='en'){document.body.classList.remove('lang-zh');document.body.classList.add('lang-en');document.documentElement.lang='en';}}catch(e){}</script>
 
   <!-- Header -->
-  <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-dark shadow-lg">
+  <header id="header" class="fixed top-0 left-0 right-0 z-50">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
       <!-- Logo -->
-      <a href="#" class="flex items-center gap-2">
+      <a href="#" class="flex items-center gap-2.5">
         <img src="assets/gc-logo.png" alt="GC GlowUp Club" class="h-10 w-auto">
-        <span class="text-white text-sm sm:text-lg font-bold tracking-wide whitespace-nowrap">GC GlowUp Club</span>
+        <span class="font-display text-white text-sm sm:text-lg font-semibold tracking-wide whitespace-nowrap">GC GlowUp Club</span>
       </a>
       <!-- Desktop Nav -->
-      <nav class="hidden lg:flex items-center gap-6">
-        <a href="#about" class="nav-link text-gray-300 hover:text-gold transition"><span data-lang="zh">关于我们</span><span data-lang="en">About</span></a>
-        <a href="#values" class="nav-link text-gray-300 hover:text-gold transition"><span data-lang="zh">核心价值</span><span data-lang="en">Values</span></a>
-        <a href="#whatwedo" class="nav-link text-gray-300 hover:text-gold transition"><span data-lang="zh">我们在做什么</span><span data-lang="en">What We Do</span></a>
-        <a href="events.html" class="nav-link text-gray-300 hover:text-gold transition"><span data-lang="zh">活动回顾</span><span data-lang="en">Events</span></a>
-        <a href="#contact" class="nav-link text-gray-300 hover:text-gold transition"><span data-lang="zh">联系我们</span><span data-lang="en">Contact</span></a>
-        <button id="lang-toggle" class="flex items-center gap-1 text-sm text-gray-300 hover:text-gold transition border border-gray-600 rounded px-2 py-1">
+      <nav class="hidden lg:flex items-center gap-7 text-[0.95rem]">
+        <a href="#about" class="text-gray-300 hover:text-gold transition"><span data-lang="zh">关于我们</span><span data-lang="en">About</span></a>
+        <a href="#values" class="text-gray-300 hover:text-gold transition"><span data-lang="zh">核心价值</span><span data-lang="en">Values</span></a>
+        <a href="#whatwedo" class="text-gray-300 hover:text-gold transition"><span data-lang="zh">我们在做什么</span><span data-lang="en">What We Do</span></a>
+        <a href="#team" class="text-gray-300 hover:text-gold transition"><span data-lang="zh">核心团队</span><span data-lang="en">Team</span></a>
+        <a href="events.html" class="text-gray-300 hover:text-gold transition"><span data-lang="zh">活动回顾</span><span data-lang="en">Events</span></a>
+        <a href="#contact" class="text-gray-300 hover:text-gold transition"><span data-lang="zh">联系我们</span><span data-lang="en">Contact</span></a>
+        <button id="lang-toggle" class="flex items-center gap-1 text-sm text-gray-300 hover:text-gold transition border border-gray-600 hover:border-gold rounded px-2 py-1">
           <span data-lang="zh">🇨🇦 EN</span><span data-lang="en">🇨🇳 中文</span>
         </button>
       </nav>
@@ -62,12 +68,13 @@
       </div>
     </div>
     <!-- Mobile Menu -->
-    <nav id="mobile-menu" class="lg:hidden bg-dark border-t border-gray-700">
-      <a href="#about" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition"><span data-lang="zh">关于我们</span><span data-lang="en">About</span></a>
-      <a href="#values" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition"><span data-lang="zh">核心价值</span><span data-lang="en">Values</span></a>
-      <a href="#whatwedo" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition"><span data-lang="zh">我们在做什么</span><span data-lang="en">What We Do</span></a>
-      <a href="events.html" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition"><span data-lang="zh">活动回顾</span><span data-lang="en">Events</span></a>
-      <a href="#contact" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition"><span data-lang="zh">联系我们</span><span data-lang="en">Contact</span></a>
+    <nav id="mobile-menu" class="lg:hidden bg-dark border-t">
+      <a href="#about" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-black/40 transition"><span data-lang="zh">关于我们</span><span data-lang="en">About</span></a>
+      <a href="#values" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-black/40 transition"><span data-lang="zh">核心价值</span><span data-lang="en">Values</span></a>
+      <a href="#whatwedo" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-black/40 transition"><span data-lang="zh">我们在做什么</span><span data-lang="en">What We Do</span></a>
+      <a href="#team" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-black/40 transition"><span data-lang="zh">核心团队</span><span data-lang="en">Team</span></a>
+      <a href="events.html" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-black/40 transition"><span data-lang="zh">活动回顾</span><span data-lang="en">Events</span></a>
+      <a href="#contact" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-black/40 transition"><span data-lang="zh">联系我们</span><span data-lang="en">Contact</span></a>
     </nav>
   </header>
 
@@ -75,13 +82,15 @@
   <section class="hero-section pt-16">
     <div class="hero-bg flex items-center justify-center text-center px-4">
       <div>
-        <img src="assets/gc-logo.png" alt="GC GlowUp Club" class="gc-logo-hero mx-auto mb-5">
-        <h1 class="text-white text-3xl md:text-5xl font-bold mb-4">GC GlowUp Club</h1>
-        <p class="text-gold text-xl md:text-2xl font-semibold mb-3">
+        <p class="hero-eyebrow">Vancouver · Canada</p>
+        <img src="assets/gc-logo.png" alt="GC GlowUp Club" class="gc-logo-hero mx-auto mb-6">
+        <h1 class="hero-title text-4xl md:text-6xl mb-5">GC GlowUp Club</h1>
+        <p class="hero-tagline text-xl md:text-2xl font-semibold">
           <span data-lang="zh">女性成长 × 社区连接 × 影响力平台</span>
           <span data-lang="en">Women's Growth × Community × Influence</span>
         </p>
-        <p class="text-gray-300 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+        <div class="hero-rule"><span></span></div>
+        <p class="text-gray-300/90 text-base md:text-lg max-w-2xl mx-auto leading-loose">
           <span data-lang="zh">通过成长、共创与影响力，连接女性、社区与更多可能性。</span>
           <span data-lang="en">Connecting women, communities, and new possibilities through growth, collaboration, and impact.</span>
         </p>
@@ -90,52 +99,56 @@
   </section>
 
   <!-- About -->
-  <section id="about" class="py-16 px-4">
-    <div class="max-w-4xl mx-auto">
-      <p class="section-eyebrow"><span data-lang="zh">关于我们</span><span data-lang="en">About Us</span></p>
-      <h2 class="section-title">GC GlowUp Club</h2>
-      <div class="w-16 h-1 bg-gold mb-8"></div>
+  <section id="about" class="py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <div class="section-head">
+        <p class="eyebrow">About Us</p>
+        <h2 class="section-title">GC GlowUp Club</h2>
+        <div class="ornament"><span></span></div>
+      </div>
 
-      <div data-lang="zh">
-        <p class="mb-4 leading-relaxed">
+      <div data-lang="zh" class="text-center">
+        <p class="lead mb-5">
           GC 是一个立足温哥华的女性社区平台，致力于连接品牌、创作者与本地社区资源，为女性创造真实、有价值、有影响力的发展机会。
         </p>
-        <p class="leading-relaxed">
-          我们相信，女性不仅是社区的参与者，更应该成为连接者、创造者与推动者。
+        <p class="lead">
+          我们相信，女性不仅是社区的参与者，更应该成为<span class="text-gold-dark font-medium">连接者、创造者与推动者</span>。
         </p>
       </div>
-      <div data-lang="en">
-        <p class="text-gold font-semibold mb-4">Women's Growth × Community × Influence</p>
-        <p class="mb-4 leading-relaxed">
+      <div data-lang="en" class="text-center">
+        <p class="font-display text-gold-dark text-lg mb-5">Women's Growth × Community × Influence</p>
+        <p class="lead mb-5">
           GC is a Vancouver-based women's community platform that brings together creators, brands, and local community resources to create meaningful opportunities for women to connect, grow, and thrive.
         </p>
-        <p class="leading-relaxed">
-          We believe women are not only participants in communities, but also leaders, innovators, and changemakers.
+        <p class="lead">
+          We believe women are not only participants in communities, but also <span class="text-gold-dark font-medium">leaders, innovators, and changemakers</span>.
         </p>
       </div>
     </div>
   </section>
 
   <!-- Mission & Vision -->
-  <section class="py-16 px-4 bg-gray-50">
-    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+  <section class="py-20 px-4 bg-ivory">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-7">
       <!-- Mission -->
       <div class="mv-card">
-        <h3 class="mv-title"><span data-lang="zh">使命</span><span data-lang="en">Our Mission</span></h3>
-        <p class="leading-relaxed" data-lang="zh">
+        <p class="mv-label">Our Mission</p>
+        <h3 class="mv-title"><span data-lang="zh">使命</span><span data-lang="en">Mission</span></h3>
+        <p data-lang="zh">
           打造一个有支持感与影响力的女性社区平台，通过连接女性、创作者、品牌与本地资源，以共创、交流与社区参与的方式，帮助更多女性获得成长、机会与真实影响力。
         </p>
-        <p class="leading-relaxed" data-lang="en">
+        <p data-lang="en">
           To build a supportive and impactful women's community platform by connecting women, creators, brands, and local resources through collaboration, shared experiences, and community engagement — empowering more women to grow, access opportunities, and create meaningful impact.
         </p>
       </div>
       <!-- Vision -->
       <div class="mv-card">
-        <h3 class="mv-title"><span data-lang="zh">愿景</span><span data-lang="en">Our Vision</span></h3>
-        <p class="leading-relaxed" data-lang="zh">
+        <p class="mv-label">Our Vision</p>
+        <h3 class="mv-title"><span data-lang="zh">愿景</span><span data-lang="en">Vision</span></h3>
+        <p data-lang="zh">
           建立一个充满连接与支持的本地女性生态，让更多女性在社区、文化与商业中，拥有表达、创造、领导与产生影响力的机会。
         </p>
-        <p class="leading-relaxed" data-lang="en">
+        <p data-lang="en">
           To create a connected and supportive community where women are empowered to express, create, lead, and make meaningful impact across culture, business, and everyday life.
         </p>
       </div>
@@ -143,121 +156,205 @@
   </section>
 
   <!-- Core Values -->
-  <section id="values" class="py-16 px-4">
+  <section id="values" class="py-20 px-4">
     <div class="max-w-5xl mx-auto">
-      <h2 class="section-title"><span data-lang="zh">Core Values / 核心价值观</span><span data-lang="en">Core Values</span></h2>
-      <div class="w-16 h-1 bg-gold mb-10"></div>
+      <div class="section-head">
+        <p class="eyebrow">Core Values</p>
+        <h2 class="section-title"><span data-lang="zh">核心价值观</span><span data-lang="en">Core Values</span></h2>
+        <div class="ornament"><span></span></div>
+      </div>
 
       <div class="grid md:grid-cols-2 gap-6">
         <!-- Connection -->
         <div class="value-card">
-          <h3 class="value-title">Connection<span class="value-title-zh" data-lang="zh"> / 连接</span></h3>
-          <p class="leading-relaxed" data-lang="zh">我们相信，真实的社区关系，始于人与人之间真诚的连接。</p>
-          <p class="leading-relaxed" data-lang="en">Real communities are built through honest conversations, shared moments, and meaningful relationships.</p>
+          <div class="value-num">01</div>
+          <h3 class="value-title">Connection<span class="zh" data-lang="zh">连接</span></h3>
+          <p data-lang="zh">我们相信，真实的社区关系，始于人与人之间真诚的连接。</p>
+          <p data-lang="en">Real communities are built through honest conversations, shared moments, and meaningful relationships.</p>
         </div>
         <!-- Collaboration -->
         <div class="value-card">
-          <h3 class="value-title">Collaboration<span class="value-title-zh" data-lang="zh"> / 共创</span></h3>
-          <p class="leading-relaxed" data-lang="zh">我们重视共创与协作，相信成长来自经验、资源与想法的共享。</p>
-          <p class="leading-relaxed" data-lang="en">We believe collaboration creates stronger ideas, deeper connections, and more opportunities for everyone involved.</p>
+          <div class="value-num">02</div>
+          <h3 class="value-title">Collaboration<span class="zh" data-lang="zh">共创</span></h3>
+          <p data-lang="zh">我们重视共创与协作，相信成长来自经验、资源与想法的共享。</p>
+          <p data-lang="en">We believe collaboration creates stronger ideas, deeper connections, and more opportunities for everyone involved.</p>
         </div>
         <!-- Empowerment -->
         <div class="value-card">
-          <h3 class="value-title">Empowerment<span class="value-title-zh" data-lang="zh"> / 赋能</span></h3>
-          <p class="leading-relaxed" data-lang="zh">我们希望通过社区与参与，帮助更多女性获得自信、机会与表达自我的力量。</p>
-          <p class="leading-relaxed" data-lang="en">We support women in becoming more confident, visible, and empowered — in business, creativity, and everyday life.</p>
+          <div class="value-num">03</div>
+          <h3 class="value-title">Empowerment<span class="zh" data-lang="zh">赋能</span></h3>
+          <p data-lang="zh">我们希望通过社区与参与，帮助更多女性获得自信、机会与表达自我的力量。</p>
+          <p data-lang="en">We support women in becoming more confident, visible, and empowered — in business, creativity, and everyday life.</p>
         </div>
         <!-- Community Impact -->
         <div class="value-card">
-          <h3 class="value-title">Community Impact<span class="value-title-zh" data-lang="zh"> / 社区影响力</span></h3>
-          <p class="leading-relaxed" data-lang="zh">我们鼓励更多人参与社区，并相信真实而持续的行动能够带来长期影响。</p>
-          <p class="leading-relaxed" data-lang="en">We believe community grows when people actively participate, support one another, and contribute with intention.</p>
+          <div class="value-num">04</div>
+          <h3 class="value-title">Community Impact<span class="zh" data-lang="zh">社区影响力</span></h3>
+          <p data-lang="zh">我们鼓励更多人参与社区，并相信真实而持续的行动能够带来长期影响。</p>
+          <p data-lang="en">We believe community grows when people actively participate, support one another, and contribute with intention.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- What We Do -->
-  <section id="whatwedo" class="py-16 px-4 bg-gray-50">
+  <section id="whatwedo" class="py-20 px-4 bg-ivory">
     <div class="max-w-4xl mx-auto">
-      <h2 class="section-title"><span data-lang="zh">我们在做什么</span><span data-lang="en">What We Do</span></h2>
-      <div class="w-16 h-1 bg-gold mb-10"></div>
+      <div class="section-head">
+        <p class="eyebrow">What We Do</p>
+        <h2 class="section-title"><span data-lang="zh">我们在做什么</span><span data-lang="en">What We Do</span></h2>
+        <div class="ornament"><span></span></div>
+      </div>
 
       <!-- 1 -->
-      <div class="program-card mb-10">
-        <h3 class="program-title"><span data-lang="zh">链接品牌 × 创作者 × 社区共创</span><span data-lang="en">Brand × Creator × Community Collaboration</span></h3>
-        <p class="leading-relaxed" data-lang="zh">
-          搭建品牌、创作者与本地社区之间的高质量连接平台，通过活动、内容传播、社群合作与资源整合，帮助优质品牌融入社区，也让创作者通过内容与参与产生更有价值的影响力。
-        </p>
-        <p class="leading-relaxed" data-lang="en">
-          We create meaningful connections between brands, creators, and local communities through events, content collaborations, community partnerships, and resource integration — helping quality brands become part of the community while empowering creators to generate more valuable impact.
-        </p>
+      <div class="wwd-item">
+        <div class="wwd-num">01</div>
+        <div>
+          <h3 class="wwd-title"><span data-lang="zh">链接品牌 × 创作者 × 社区共创</span><span data-lang="en">Brand × Creator × Community Collaboration</span></h3>
+          <p data-lang="zh">
+            搭建品牌、创作者与本地社区之间的高质量连接平台，通过活动、内容传播、社群合作与资源整合，帮助优质品牌融入社区，也让创作者通过内容与参与产生更有价值的影响力。
+          </p>
+          <p data-lang="en">
+            We create meaningful connections between brands, creators, and local communities through events, content collaborations, community partnerships, and resource integration — helping quality brands become part of the community while empowering creators to generate more valuable impact.
+          </p>
+        </div>
       </div>
 
       <!-- 2 -->
-      <div class="program-card mb-10">
-        <h3 class="program-title"><span data-lang="zh">为创业女性赋能</span><span data-lang="en">Empowering Women Entrepreneurs</span></h3>
-        <p class="leading-relaxed" data-lang="zh">
-          通过主题分享、资源链接、合作机会与成长平台，支持更多女性创业者、创作者与职业女性被看见、被连接、被支持。
-        </p>
-        <p class="leading-relaxed" data-lang="en">
-          Through workshops, networking, resource sharing, and collaborations, we support women entrepreneurs and creators in being seen, connected, and supported.
-        </p>
+      <div class="wwd-item">
+        <div class="wwd-num">02</div>
+        <div>
+          <h3 class="wwd-title"><span data-lang="zh">为创业女性赋能</span><span data-lang="en">Empowering Women Entrepreneurs</span></h3>
+          <p data-lang="zh">
+            通过主题分享、资源链接、合作机会与成长平台，支持更多女性创业者、创作者与职业女性被看见、被连接、被支持。
+          </p>
+          <p data-lang="en">
+            Through workshops, networking, resource sharing, and collaborations, we support women entrepreneurs and creators in being seen, connected, and supported.
+          </p>
+        </div>
       </div>
 
       <!-- 3 -->
-      <div class="program-card">
-        <h3 class="program-title"><span data-lang="zh">提升女性在社区与商业中的影响力</span><span data-lang="en">Advancing Women's Influence in Community &amp; Business</span></h3>
-        <p class="leading-relaxed" data-lang="zh">
-          GC 希望推动更多女性参与公共事务、社区活动与商业合作，让女性的声音、专业与创造力，在城市文化、社区建设与商业生态中发挥更重要的作用。
-        </p>
-        <p class="leading-relaxed" data-lang="en">
-          GC encourages more women to participate in public engagement, community initiatives, and business collaborations — so that women's voices, expertise, and creativity play a greater role in urban culture, community building, and the business ecosystem.
-        </p>
+      <div class="wwd-item">
+        <div class="wwd-num">03</div>
+        <div>
+          <h3 class="wwd-title"><span data-lang="zh">提升女性在社区与商业中的影响力</span><span data-lang="en">Advancing Women's Influence in Community &amp; Business</span></h3>
+          <p data-lang="zh">
+            GC 希望推动更多女性参与公共事务、社区活动与商业合作，让女性的声音、专业与创造力，在城市文化、社区建设与商业生态中发挥更重要的作用。
+          </p>
+          <p data-lang="en">
+            GC encourages more women to participate in public engagement, community initiatives, and business collaborations — so that women's voices, expertise, and creativity play a greater role in urban culture, community building, and the business ecosystem.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Focus Areas -->
-  <section class="py-16 px-4">
+  <section class="py-20 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="section-title"><span data-lang="zh">GC 核心方向</span><span data-lang="en">Our Focus Areas</span></h2>
-      <div class="w-16 h-1 bg-gold mb-10"></div>
+      <div class="section-head">
+        <p class="eyebrow">Our Focus Areas</p>
+        <h2 class="section-title"><span data-lang="zh">GC 核心方向</span><span data-lang="en">Our Focus Areas</span></h2>
+        <div class="ornament"><span></span></div>
+      </div>
 
       <div class="grid sm:grid-cols-2 gap-4">
         <div class="focus-item">
-          <span class="text-gold mr-2">●</span><span data-lang="zh">女性成长与资源链接</span><span data-lang="en">Women's Growth &amp; Resource Connections</span>
+          <span><span data-lang="zh">女性成长与资源链接</span><span data-lang="en">Women's Growth &amp; Resource Connections</span></span>
         </div>
         <div class="focus-item">
-          <span class="text-gold mr-2">●</span><span data-lang="zh">品牌 × 创作者 × 社区合作</span><span data-lang="en">Brand × Creator × Community Collaborations</span>
+          <span><span data-lang="zh">品牌 × 创作者 × 社区合作</span><span data-lang="en">Brand × Creator × Community Collaborations</span></span>
         </div>
         <div class="focus-item">
-          <span class="text-gold mr-2">●</span><span data-lang="zh">女性创业支持与项目孵化</span><span data-lang="en">Women Entrepreneurship Support &amp; Project Incubation</span>
+          <span><span data-lang="zh">女性创业支持与项目孵化</span><span data-lang="en">Women Entrepreneurship Support &amp; Project Incubation</span></span>
         </div>
         <div class="focus-item">
-          <span class="text-gold mr-2">●</span><span data-lang="zh">青年成长与公益活动（GC Youth）</span><span data-lang="en">Youth Development &amp; Community Initiatives (GC Youth)</span>
+          <span><span data-lang="zh">青年成长与公益活动（GC Youth）</span><span data-lang="en">Youth Development &amp; Community Initiatives (GC Youth)</span></span>
         </div>
         <div class="focus-item">
-          <span class="text-gold mr-2">●</span><span data-lang="zh">本地高质量社交与主题活动</span><span data-lang="en">Social &amp; Community Events</span>
+          <span><span data-lang="zh">本地高质量社交与主题活动</span><span data-lang="en">Social &amp; Community Events</span></span>
         </div>
         <div class="focus-item">
-          <span class="text-gold mr-2">●</span><span data-lang="zh">社区文化与女性影响力建设</span><span data-lang="en">Community Culture &amp; Women's Impact Development</span>
+          <span><span data-lang="zh">社区文化与女性影响力建设</span><span data-lang="en">Community Culture &amp; Women's Impact Development</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- Team / 核心团队 —— 占位板块                                     -->
+  <!-- 拿到照片和简介后：把 team-avatar 里的 svg 换成                   -->
+  <!-- <img src="assets/team/xxx.jpg" class="w-full h-full object-cover rounded-full">，-->
+  <!-- 并替换姓名 / 职位 / 简介文字。需要更多成员就再复制一块 team-card。 -->
+  <!-- ============================================================= -->
+  <section id="team" class="py-20 px-4 bg-ivory">
+    <div class="max-w-5xl mx-auto">
+      <div class="section-head">
+        <p class="eyebrow">Our Team</p>
+        <h2 class="section-title"><span data-lang="zh">核心团队</span><span data-lang="en">Our Team</span></h2>
+        <div class="ornament"><span></span></div>
+        <p class="mt-5 text-sm text-gray-500 tracking-wide">
+          <span data-lang="zh">团队成员介绍整理中，敬请期待</span>
+          <span data-lang="en">Team profiles are on their way — stay tuned</span>
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 成员 1 -->
+        <div class="team-card">
+          <div class="team-avatar">
+            <svg fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </div>
+          <h3 class="team-name"><span data-lang="zh">虚位以待</span><span data-lang="en">To Be Announced</span></h3>
+          <p class="team-role">Founder</p>
+          <p class="team-note">
+            <span data-lang="zh">个人简介即将上线</span>
+            <span data-lang="en">Bio coming soon</span>
+          </p>
+        </div>
+        <!-- 成员 2 -->
+        <div class="team-card">
+          <div class="team-avatar">
+            <svg fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </div>
+          <h3 class="team-name"><span data-lang="zh">虚位以待</span><span data-lang="en">To Be Announced</span></h3>
+          <p class="team-role">Co-Founder</p>
+          <p class="team-note">
+            <span data-lang="zh">个人简介即将上线</span>
+            <span data-lang="en">Bio coming soon</span>
+          </p>
+        </div>
+        <!-- 成员 3 -->
+        <div class="team-card">
+          <div class="team-avatar">
+            <svg fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </div>
+          <h3 class="team-name"><span data-lang="zh">虚位以待</span><span data-lang="en">To Be Announced</span></h3>
+          <p class="team-role">Core Member</p>
+          <p class="team-note">
+            <span data-lang="zh">个人简介即将上线</span>
+            <span data-lang="en">Bio coming soon</span>
+          </p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-16 px-4 bg-gray-50">
+  <section id="contact" class="py-20 px-4">
     <div class="max-w-3xl mx-auto">
-      <h2 class="section-title"><span data-lang="zh">联系我们</span><span data-lang="en">Contact Us</span></h2>
-      <div class="w-16 h-1 bg-gold mb-10"></div>
+      <div class="section-head">
+        <p class="eyebrow">Contact Us</p>
+        <h2 class="section-title"><span data-lang="zh">联系我们</span><span data-lang="en">Contact Us</span></h2>
+        <div class="ornament"><span></span></div>
+      </div>
 
-      <div class="flex flex-col sm:flex-row items-center sm:items-start gap-8">
+      <div class="contact-panel flex flex-col sm:flex-row items-center sm:items-start gap-10">
         <!-- Email (left) -->
         <div class="flex-1 text-center sm:text-left">
-          <h3 class="text-lg font-bold mb-2"><span data-lang="zh">邮箱</span><span data-lang="en">Email</span></h3>
-          <a href="mailto:glowupclub.ca@gmail.com" class="text-gold hover:text-gold-dark font-medium break-all">glowupclub.ca@gmail.com</a>
+          <p class="contact-label">Email</p>
+          <a href="mailto:glowupclub.ca@gmail.com" class="font-display text-lg text-gold-dark hover:text-gold font-semibold break-all transition">glowupclub.ca@gmail.com</a>
           <p class="text-gray-500 mt-4 text-sm leading-relaxed">
             <span data-lang="zh">欢迎品牌合作、活动咨询与加入社区，随时与我们联系。</span>
             <span data-lang="en">For brand partnerships, event inquiries, or to join our community — reach out anytime.</span>
@@ -265,8 +362,8 @@
         </div>
         <!-- WeChat QR (right) -->
         <div class="flex flex-col items-center flex-shrink-0">
-          <h3 class="text-lg font-bold mb-3"><span data-lang="zh">微信</span><span data-lang="en">WeChat</span></h3>
-          <img src="assets/gc-wechat.jpg" alt="GC GlowUp Club WeChat" class="w-40 h-auto rounded-lg border border-gray-200 shadow-sm bg-white">
+          <p class="contact-label">WeChat</p>
+          <img src="assets/gc-wechat.jpg" alt="GC GlowUp Club WeChat" class="w-40 h-auto border border-gray-200 shadow-sm bg-white">
           <p class="text-gray-500 mt-3 text-sm">
             <span data-lang="zh">扫码添加，加入 GC 社区</span>
             <span data-lang="en">Scan to join the GC community</span>
@@ -277,18 +374,17 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-dark text-gray-400 py-12 px-4">
-    <div class="max-w-4xl mx-auto">
-      <div class="flex items-center gap-2 mb-4">
-        <img src="assets/gc-logo.png" alt="GC GlowUp Club" class="h-9 w-auto">
-        <span class="text-gold text-lg font-bold">GC GlowUp Club</span>
-      </div>
-      <p class="text-sm leading-relaxed mb-6 max-w-2xl">
+  <footer class="footer-dark text-gray-400 pt-14 pb-8 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <img src="assets/gc-logo.png" alt="GC GlowUp Club" class="h-12 w-auto mx-auto mb-3">
+      <p class="font-display text-gold text-xl font-semibold mb-1">GC GlowUp Club</p>
+      <p class="text-[0.7rem] tracking-[0.4em] uppercase text-gray-500 mb-6">Vancouver · Canada</p>
+      <p class="text-sm leading-relaxed mb-8 max-w-2xl mx-auto">
         <span data-lang="zh">GC 是一个立足温哥华的女性社区平台，致力于连接品牌、创作者与本地社区资源，为女性创造真实、有价值、有影响力的发展机会。</span>
         <span data-lang="en">GC is a Vancouver-based women's community platform connecting creators, brands, and local resources to create meaningful opportunities for women to connect, grow, and thrive.</span>
       </p>
-      <div class="border-t border-gray-700 pt-6 text-center">
-        <p class="text-gold text-sm">Copyright &copy; 2026 GC GlowUp Club</p>
+      <div class="border-t border-gray-800 pt-6">
+        <p class="text-gold/90 text-sm">Copyright &copy; 2026 GC GlowUp Club</p>
       </div>
     </div>
   </footer>

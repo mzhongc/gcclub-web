@@ -6,19 +6,24 @@
   <title>活动回顾 | GC GlowUp Club</title>
   <link rel="icon" type="image/png" href="assets/gc-logo.png">
   <link rel="apple-touch-icon" href="assets/gc-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Noto+Serif+SC:wght@600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            gold: '#DAA520',
-            'gold-dark': '#B8860B',
-            'gold-light': '#F0D060',
-            dark: '#1a1a1a',
+            gold: '#C9A227',
+            'gold-dark': '#A8862B',
+            'gold-light': '#D4B45A',
+            dark: '#141210',
+            ivory: '#FAF8F3',
           },
           fontFamily: {
-            sans: ['"PingFang SC"', '"Microsoft YaHei"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+            sans: ['Inter', '"Noto Sans SC"', '"PingFang SC"', '"Microsoft YaHei"', 'sans-serif'],
+            display: ['"Playfair Display"', '"Noto Serif SC"', '"Songti SC"', 'serif'],
           }
         }
       }
@@ -31,21 +36,22 @@
   <script>try{if(localStorage.getItem('gc-lang')==='en'){document.body.classList.remove('lang-zh');document.body.classList.add('lang-en');document.documentElement.lang='en';}}catch(e){}</script>
 
   <!-- Header -->
-  <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-dark shadow-lg">
+  <header id="header" class="fixed top-0 left-0 right-0 z-50">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
       <!-- Logo -->
-      <a href="index.html" class="flex items-center gap-2">
+      <a href="index.html" class="flex items-center gap-2.5">
         <img src="assets/gc-logo.png" alt="GC GlowUp Club" class="h-10 w-auto">
-        <span class="text-white text-sm sm:text-lg font-bold tracking-wide whitespace-nowrap">GC GlowUp Club</span>
+        <span class="font-display text-white text-sm sm:text-lg font-semibold tracking-wide whitespace-nowrap">GC GlowUp Club</span>
       </a>
       <!-- Desktop Nav -->
-      <nav class="hidden lg:flex items-center gap-6">
+      <nav class="hidden lg:flex items-center gap-7 text-[0.95rem]">
         <a href="index.html#about" class="text-gray-300 hover:text-gold transition"><span data-lang="zh">关于我们</span><span data-lang="en">About</span></a>
         <a href="index.html#values" class="text-gray-300 hover:text-gold transition"><span data-lang="zh">核心价值</span><span data-lang="en">Values</span></a>
         <a href="index.html#whatwedo" class="text-gray-300 hover:text-gold transition"><span data-lang="zh">我们在做什么</span><span data-lang="en">What We Do</span></a>
+        <a href="index.html#team" class="text-gray-300 hover:text-gold transition"><span data-lang="zh">核心团队</span><span data-lang="en">Team</span></a>
         <a href="events.html" class="text-gold font-semibold transition"><span data-lang="zh">活动回顾</span><span data-lang="en">Events</span></a>
         <a href="index.html#contact" class="text-gray-300 hover:text-gold transition"><span data-lang="zh">联系我们</span><span data-lang="en">Contact</span></a>
-        <button id="lang-toggle" class="flex items-center gap-1 text-sm text-gray-300 hover:text-gold transition border border-gray-600 rounded px-2 py-1">
+        <button id="lang-toggle" class="flex items-center gap-1 text-sm text-gray-300 hover:text-gold transition border border-gray-600 hover:border-gold rounded px-2 py-1">
           <span data-lang="zh">🇨🇦 EN</span><span data-lang="en">🇨🇳 中文</span>
         </button>
       </nav>
@@ -62,17 +68,19 @@
       </div>
     </div>
     <!-- Mobile Menu -->
-    <nav id="mobile-menu" class="lg:hidden bg-dark border-t border-gray-700">
-      <a href="index.html#about" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition"><span data-lang="zh">关于我们</span><span data-lang="en">About</span></a>
-      <a href="index.html#values" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition"><span data-lang="zh">核心价值</span><span data-lang="en">Values</span></a>
-      <a href="index.html#whatwedo" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition"><span data-lang="zh">我们在做什么</span><span data-lang="en">What We Do</span></a>
-      <a href="events.html" class="block px-6 py-3 text-gold font-semibold hover:bg-gray-800 transition"><span data-lang="zh">活动回顾</span><span data-lang="en">Events</span></a>
-      <a href="index.html#contact" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-gray-800 transition"><span data-lang="zh">联系我们</span><span data-lang="en">Contact</span></a>
+    <nav id="mobile-menu" class="lg:hidden bg-dark border-t">
+      <a href="index.html#about" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-black/40 transition"><span data-lang="zh">关于我们</span><span data-lang="en">About</span></a>
+      <a href="index.html#values" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-black/40 transition"><span data-lang="zh">核心价值</span><span data-lang="en">Values</span></a>
+      <a href="index.html#whatwedo" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-black/40 transition"><span data-lang="zh">我们在做什么</span><span data-lang="en">What We Do</span></a>
+      <a href="index.html#team" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-black/40 transition"><span data-lang="zh">核心团队</span><span data-lang="en">Team</span></a>
+      <a href="events.html" class="block px-6 py-3 text-gold font-semibold hover:bg-black/40 transition"><span data-lang="zh">活动回顾</span><span data-lang="en">Events</span></a>
+      <a href="index.html#contact" class="block px-6 py-3 text-gray-300 hover:text-gold hover:bg-black/40 transition"><span data-lang="zh">联系我们</span><span data-lang="en">Contact</span></a>
     </nav>
   </header>
 
   <!-- Page Hero -->
   <section class="page-hero">
+    <p class="hero-eyebrow">GC Moments</p>
     <h1><span data-lang="zh">活动回顾</span><span data-lang="en">Events</span></h1>
     <p>
       <span data-lang="zh">记录 GC 每一次社区活动的精彩瞬间</span>
@@ -93,7 +101,7 @@
     <!-- ===== 年份 2026（默认展开） ===== -->
     <div class="year-group open">
       <button class="year-toggle" type="button">
-        2026
+        <span class="year-label">2026</span>
         <span class="year-count"><span data-lang="zh">2 场活动</span><span data-lang="en">2 events</span></span>
         <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
       </button>
@@ -153,7 +161,7 @@
     <!-- ===== 年份 2025（默认收起） ===== -->
     <div class="year-group">
       <button class="year-toggle" type="button">
-        2025
+        <span class="year-label">2025</span>
         <span class="year-count"><span data-lang="zh">1 场活动</span><span data-lang="en">1 event</span></span>
         <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
       </button>
@@ -186,18 +194,17 @@
   </div>
 
   <!-- Footer -->
-  <footer class="bg-dark text-gray-400 py-12 px-4 mt-10">
-    <div class="max-w-4xl mx-auto">
-      <div class="flex items-center gap-2 mb-4">
-        <img src="assets/gc-logo.png" alt="GC GlowUp Club" class="h-9 w-auto">
-        <span class="text-gold text-lg font-bold">GC GlowUp Club</span>
-      </div>
-      <p class="text-sm leading-relaxed mb-6 max-w-2xl">
+  <footer class="footer-dark text-gray-400 pt-14 pb-8 px-4 mt-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <img src="assets/gc-logo.png" alt="GC GlowUp Club" class="h-12 w-auto mx-auto mb-3">
+      <p class="font-display text-gold text-xl font-semibold mb-1">GC GlowUp Club</p>
+      <p class="text-[0.7rem] tracking-[0.4em] uppercase text-gray-500 mb-6">Vancouver · Canada</p>
+      <p class="text-sm leading-relaxed mb-8 max-w-2xl mx-auto">
         <span data-lang="zh">GC 是一个立足温哥华的女性社区平台，致力于连接品牌、创作者与本地社区资源，为女性创造真实、有价值、有影响力的发展机会。</span>
         <span data-lang="en">GC is a Vancouver-based women's community platform connecting creators, brands, and local resources to create meaningful opportunities for women to connect, grow, and thrive.</span>
       </p>
-      <div class="border-t border-gray-700 pt-6 text-center">
-        <p class="text-gold text-sm">Copyright &copy; 2026 GC GlowUp Club</p>
+      <div class="border-t border-gray-800 pt-6">
+        <p class="text-gold/90 text-sm">Copyright &copy; 2026 GC GlowUp Club</p>
       </div>
     </div>
   </footer>
